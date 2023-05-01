@@ -1,0 +1,30 @@
+base:
+  project: dvc_pipeline_demo
+  random_state: 47
+  target_col: quality
+
+data_source:
+  # gs_path: https://raw.githubusercontent.com/TripathiAshutosh/dataset/main/red_wine.csv
+  local_path: https://raw.githubusercontent.com/TripathiAshutosh/dataset/main/red_wine.csv
+
+split:
+  dir: data/split
+  train_file: train.csv
+  test_file: test.csv
+  split_ratio: 0.20
+
+process:
+  dir: data/processed
+  train_file: final_train.csv
+  test_file: final_test.csv
+
+train:
+  n_est: 25
+ 
+model_dir: model
+
+# reports:
+#   scores: report/scores.json
+#   roc: report/roc.json
+#   prc: report/prc.json
+#   auc: report/auc.json
