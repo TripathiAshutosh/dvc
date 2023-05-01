@@ -4,7 +4,7 @@ base:
   target_col: quality
 
 data_source:
-  # gs_path: https://raw.githubusercontent.com/TripathiAshutosh/dataset/main/red_wine.csv
+  # gs_path: gs://dvc_project/
   local_path: https://raw.githubusercontent.com/TripathiAshutosh/dataset/main/red_wine.csv
 
 split:
@@ -23,8 +23,4 @@ train:
  
 model_dir: model
 
-# reports:
-#   scores: report/scores.json
-#   roc: report/roc.json
-#   prc: report/prc.json
-#   auc: report/auc.json
+

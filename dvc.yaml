@@ -1,0 +1,76 @@
+stages:
+  data_split:
+    cmd: python src/data_split.py
+    deps:
+    - src/data_split.py
+    params:
+    - base.random_state
+    - data_source.local_path
+    - split.split_ratio
+    outs:
+    - data/split
+  data_processing:
+    cmd: python src/data_processing.py data/processed
+    deps:
+    - data/split
+    - src/data_processing.py
+    params:
+    - process.dir
+    - process.test_file
+    - process.train_file
+    - split.dir
+    - split.test_file
+    - split.train_file
+    outs:
+    - data/processed
+  train:
+    cmd: python src/train.py data/features model/model.pkl
+    deps:
+    - data/processed
+    - src/train.py
+    params:
+    - base.random_state
+    - base.target_col
+    - model_dir
+    - process.dir
+    - process.test_file
+    - process.train_file
+    - train.n_est
+    outs:
+    - model/model.pkl
+  evaluate:
+    cmd: python src/evaluate.py model/model.pkl data/processed
+    deps:
+    - data/processed
+    - model/model.pkl
+    - src/evaluate.py
+    outs:
+    - eval/importance.png
+    - eval/live/plots:
+        cache: false
+    - eval/prc:
+        cache: false
+    metrics:
+    - eval/live/metrics.json:
+        cache: false
+
+plots:
+- ROC:
+    template: simple
+    x: fpr
+    y:
+      eval/live/plots/sklearn/roc/train.json: tpr
+      eval/live/plots/sklearn/roc/test.json: tpr
+- Confusion-Matrix:
+    template: confusion
+    x: actual
+    y:
+      eval/live/plots/sklearn/cm/train.json: predicted
+      eval/live/plots/sklearn/cm/test.json: predicted
+- Precision-Recall:
+    template: simple
+    x: recall
+    y:
+      eval/prc/train.json: precision
+      eval/prc/test.json: precision
+- eval/importance.png
