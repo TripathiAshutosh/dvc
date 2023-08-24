@@ -3,7 +3,7 @@
         {
             "fpr": 0.0,
             "tpr": 0.0,
-            "threshold": 2.0
+            "threshold": Infinity
         },
         {
             "fpr": 0.0,

@@ -1,4 +1,6 @@
 [core]
-    remote = local
+    remote = aws
 ['remote "local"']
-    url = ../../../dvc_remote
+    url = ../../../../dvc_remote
+['remote "aws"']
+    url = s3://dvc-test-alroy/data
