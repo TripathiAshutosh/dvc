@@ -57,12 +57,12 @@ stages:
         process.dir: data/processed
         process.test_file: final_test.csv
         process.train_file: final_train.csv
-        train.n_est: 25
+        train.n_est: 30
     outs:
     - path: model/model.pkl
       hash: md5
-      md5: 19359c6d988f06d30334b47c24d3049d
-      size: 423421
+      md5: ef07b7df82f607a4c2874f8db6f7d8b8
+      size: 509495
   evaluate:
     cmd: python src/evaluate.py model/model.pkl data/processed
     deps:
@@ -72,27 +72,27 @@ stages:
       nfiles: 2
     - path: model/model.pkl
       hash: md5
-      md5: 19359c6d988f06d30334b47c24d3049d
-      size: 423421
+      md5: ef07b7df82f607a4c2874f8db6f7d8b8
+      size: 509495
     - path: src/evaluate.py
       md5: 5c35a4d54ca6096970a11be009f716fd
       size: 6953
     outs:
     - path: eval/importance.png
       hash: md5
-      md5: a067f47910fd201e0a8a5733316b72c8
-      size: 19233
+      md5: dca8a4b664e1d7729c9eb180fb5a2aaf
+      size: 18587
     - path: eval/live/metrics.json
       hash: md5
-      md5: 6c7805772ddda0bab167e7c06d49d6b7
+      md5: 8ea7512cc843b0b7a6a911aee3e1658b
       size: 191
     - path: eval/live/plots
       hash: md5
-      md5: a52d91494941cfdbba5606361f70169c.dir
-      size: 110291
+      md5: 38ff859c3826bff9f8713a66a962d3d0.dir
+      size: 110927
       nfiles: 4
     - path: eval/prc
       hash: md5
-      md5: 2ff1570495e2bfacc9954a94ed1b77a8.dir
-      size: 6648
+      md5: 70e39cfdf65bb95c76877444d0678b7a.dir
+      size: 7803
       nfiles: 2
