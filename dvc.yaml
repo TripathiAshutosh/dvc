@@ -1,6 +1,6 @@
 stages:
   data_split:
-    cmd: python src/data_split.py
+    cmd: python src/data_split.py data/data.csv
     deps:
     - src/data_split.py
     params:
@@ -53,24 +53,3 @@ stages:
     metrics:
     - eval/live/metrics.json:
         cache: false
-
-plots:
-- ROC:
-    template: simple
-    x: fpr
-    y:
-      eval/live/plots/sklearn/roc/train.json: tpr
-      eval/live/plots/sklearn/roc/test.json: tpr
-- Confusion-Matrix:
-    template: confusion
-    x: actual
-    y:
-      eval/live/plots/sklearn/cm/train.json: predicted
-      eval/live/plots/sklearn/cm/test.json: predicted
-- Precision-Recall:
-    template: simple
-    x: recall
-    y:
-      eval/prc/train.json: precision
-      eval/prc/test.json: precision
-- eval/importance.png
