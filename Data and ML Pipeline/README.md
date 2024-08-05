@@ -1,6 +1,6 @@
 # **Reproducible Data and ML Pipeline using DVC - Live Demo**
 
-**Source Code Credit: source code used for explanation is taken from dvc documentation. IT is used to explain how to create DVC data and ML pipeline and run reproducible pipelines.**
+**Source Code Credit: `wget https://code.dvc.org/get-started/code.zip`. It is used to explain how to create DVC data and ML pipeline and run reproducible pipelines.**
 
 ### 1. Create Conda environment
 
