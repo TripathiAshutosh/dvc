@@ -50,10 +50,13 @@ So the idea is if you want to update any parameter just update in the paramsyaml
 
 So now if you have done above things then lets run some command to put together everything in pipeline.
 
+### Pipeline Creation
+
 #### **Command 1**
 From inside the project folder run below commands.
 * `git init` #initialize the git repo
 * `dvc init` #initialize the dvc repo to version data and also for pipeline stuff
+* `dvc remote add myremote <remote directory path ex. gs://gs_bucket_name/>`
 
 #### **Command 2**
 * `dvc add data/data.xml`
