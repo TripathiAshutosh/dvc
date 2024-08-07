@@ -1,5 +1,11 @@
 # **Reproducible Data and ML Pipeline using DVC - Live Demo**
 
+
+## Step by step Explaination:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=0fZsYTGoH0A" target="_blank"><img src="http://img.youtube.com/vi/0fZsYTGoH0A/0.jpg" 
+alt="MLFlow Live Demo" width="500" height="315" border="10" /></a>
+
 **Source Code Credit: `wget https://code.dvc.org/get-started/code.zip`. It is used to explain how to create DVC data and ML pipeline and run reproducible pipelines.**
 
 ### 1. Create Conda environment
@@ -59,6 +65,9 @@ From inside the project folder run below commands.
 * `git init` #initialize the git repo
 * `dvc init` #initialize the dvc repo to version data and also for pipeline stuff
 * `dvc remote add myremote <remote directory path ex. gs://gs_bucket_name/>`
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=kAg4TO03slA" target="_blank"><img src="http://img.youtube.com/vi/kAg4TO03slA/0.jpg" 
+alt="MLFlow Live Demo" width="500" height="315" border="10" /></a>
 
 #### **Command 2**
 * `dvc add data/data.xml`
