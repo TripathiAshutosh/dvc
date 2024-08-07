@@ -115,4 +115,6 @@ This command will create the train stage in the pipeline and once pipeline execu
 * `git commit -m "first pipeline repro"`
 
 
+### Next Steps, 
+as explained in the video tutoria, change some of the parameters value in the `params.yaml` file and re run the `dvc repro` command and observe the output at terminal.
 
